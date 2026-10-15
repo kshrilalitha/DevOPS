@@ -206,7 +206,7 @@ pipeline {
 
                     echo "Checking website page title..."
 
-                    if grep -qi "Wisdom of Indian Saints" /tmp/mevi-site.html; then
+                    if grep -Fqi "Cosmos | Explore the Universe" /tmp/mevi-site.html; then
                         echo "SUCCESS: Expected website title found."
                     else
                         echo "ERROR: Expected title was not found."
@@ -231,7 +231,7 @@ pipeline {
                         wget -q -O - http://127.0.0.1/ \
                         > /tmp/mevi-container-page.html
 
-                    if grep -qi "Wisdom of Indian Saints" /tmp/mevi-container-page.html; then
+                    if grep -Fqi "Cosmos | Explore the Universe" /tmp/mevi-container-page.html; then
                         echo "SUCCESS: Website responds inside the container."
                     else
                         echo "ERROR: Container content verification failed."
